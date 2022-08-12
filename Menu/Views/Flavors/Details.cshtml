@@ -19,7 +19,7 @@ else
   <ul>
   @foreach(var join in Model.JoinEntities)
   {
-    <li>@join.Treat.Title</li>
+    <li>@join.Treat.Name</li>
   }
   </ul>
 }
@@ -29,4 +29,4 @@ else
 <h5>@Html.ActionLink("Add treat", "AddTreat", new { id = Model.FlavorId })</h5>
 <h5>@Html.ActionLink("Edit flavor", "Edit", new { id = Model.FlavorId })</h5>
 <h5>@Html.ActionLink("Delete flavor", "Delete", new { id = Model.FlavorId })</h5>
-<h5>@Html.ActionLink("Back to categories", "Index")</h5>
+<h5>@Html.ActionLink("Back to flavors", "Index")</h5>

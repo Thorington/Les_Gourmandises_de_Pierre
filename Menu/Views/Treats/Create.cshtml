@@ -10,20 +10,11 @@
 
 @using (Html.BeginForm())
 {
-  <p>Title:
-  @Html.TextBoxFor(model => model.Title, new { @class = "form-control", placeholder="Required", required="required", style="width: 600px;"})</p>
+  <p>Name:
+  @Html.TextBoxFor(model => model.Name, new { @class = "form-control", placeholder="Required", required="required", style="width: 600px;"})</p>
 
   <p>Flavor:
   @Html.DropDownList("FlavorId")</p>
-
-  <p>Ingredients:
-  @Html.TextAreaFor(model => model.Ingredients, new { @class = "form-control", style="width: 600px; height: 200px;"})</p>
-
-  <p>Instructions:
-  @Html.TextAreaFor(model => model.Instructions, new { @class = "form-control", style="width: 600px; height: 200px"})</p>
-
-  <p>Rating:
-  @Html.TextBoxFor(model => model.Rating)</p> 
 
   <br>
   <p><input type="submit" value="Save" class="btn btn-default" /></p>

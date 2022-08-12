@@ -6,11 +6,11 @@ namespace Menu.Models
   {
     public Flavor()
     {
-      this.JoinEntities = new HashSet<FlavorTreat>();
+      this.JoinEntities = new HashSet<TreatFlavor>();
     }
 
     public int FlavorId { get; set; }
     public string Name { get; set; }
-    public virtual ICollection<FlavorTreat> JoinEntities { get; set; }
+    public virtual ICollection<TreatFlavor> JoinEntities { get; set; }
   }
 }

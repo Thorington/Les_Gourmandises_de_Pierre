@@ -7,7 +7,7 @@ namespace Menu.Models
   {
     public DbSet<Flavor> Categories { get; set; }
     public DbSet<Treat> Treats { get; set; }
-    public DbSet<FlavorTreat> FlavorTreat { get; set; }
+    public DbSet<TreatFlavor> TreatFlavor { get; set; }
 
     public MenuContext(DbContextOptions options) : base(options) { }
 

@@ -4,7 +4,7 @@
 
 @model Menu.Models.Treat
 
-<h2>Edit @Html.DisplayFor(model => model.Title)</h2>
+<h2>Edit @Html.DisplayFor(model => model.Name)</h2>
 <hr />
 <br>
 
@@ -12,28 +12,18 @@
 {
   @Html.HiddenFor(model => model.TreatId)
 
-  <p>Title:
-  @Html.TextBoxFor(model => model.Title, new { @class = "form-control", placeholder="Required", required="required", style="width: 600px;"})</p>
+  <p>Name:
+  @Html.TextBoxFor(model => model.Name, new { @class = "form-control", placeholder="Required", required="required", style="width: 600px;"})</p>
 
   <p>Flavor:
   @Html.DropDownList("FlavorId")</p>
-
-  <p>Ingredients:
-  @Html.TextAreaFor(model => model.Ingredients, new { @class = "form-control", style="width: 600px; height: 200px;"})</p>
-
-  <p>Instructions:
-  @Html.TextAreaFor(model => model.Instructions, new { @class = "form-control", style="width: 600px; height: 200px"})</p>
-
-  <p>Rating:
-  @Html.TextBoxFor(model => model.Rating)</p> 
-
 
 
   <input type="submit" value="Save" class="btn" />
 }
 <hr />
 <br>
-<h4>Manage categories</h4>
+<h4>Manage flavors</h4>
 <br>
   @foreach(var join in Model.JoinEntities)
   {
@@ -41,7 +31,7 @@
       <dt>@join.Flavor.Name
         @using (Html.BeginForm("DeleteFlavor", "Treats"))
         {
-        @Html.Hidden("joinId", @join.FlavorTreatId)
+        @Html.Hidden("joinId", @join.TreatFlavorId)
         <input type="submit" value="Delete" class="btn"/>
         }</dt>
     </dl>

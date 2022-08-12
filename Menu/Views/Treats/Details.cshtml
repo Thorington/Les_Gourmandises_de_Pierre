@@ -4,38 +4,27 @@
 
 @model Menu.Models.Treat
 
-<h2>@Html.DisplayFor(model => model.Title)</h2>
+<h2>@Html.DisplayFor(model => model.Name)</h2>
 <hr />
 <br>
 
 @if(@Model.JoinEntities.Count == 0)
 {
-  <h5>Ingredients: @Html.DisplayFor(model => model.Ingredients)</h5>
-  <h5>Instructions: @Html.DisplayFor(model => model.Instructions)</h5>
-  <h5>Rating: @Html.DisplayFor(model => model.Rating)</h5>
   <hr />
   <h4>Categories:</h4>
-  <p>This treat does not belong to any categories</p>
+  <p>This treat does not belong to any flavors</p>
 }
 else
 {
-  <h3>Ingredients:</h3>
-  <h5>@Html.DisplayFor(model => model.Ingredients)</h5>
-  <br>
-  <h3>Instructions:</h3>
-  <h5>@Html.DisplayFor(model => model.Instructions)</h5>
-  <br>
-  <h3>Rating: @Html.DisplayFor(model => model.Rating)</h3>
-  <br>
-  <hr />
   <h3>Categories:</h3>
+  <hr />
   <dl>
   @foreach(var join in Model.JoinEntities)
   {
     <dt>@join.Flavor.Name 
     @using (Html.BeginForm("DeleteFlavor", "Treats"))
     {
-      @Html.Hidden("joinId", @join.FlavorTreatId) 
+      @Html.Hidden("joinId", @join.TreatFlavorId) 
       <input type="submit" value="Delete" class="btn"/>
     }
     </dt>

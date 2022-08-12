@@ -82,9 +82,9 @@ namespace Menu.Controllers
     {
       var joinEntry =
           _db
-              .FlavorTreat
-              .FirstOrDefault(entry => entry.FlavorTreatId == joinId);
-      _db.FlavorTreat.Remove(joinEntry);
+              .TreatFlavor
+              .FirstOrDefault(entry => entry.TreatFlavorId == joinId);
+      _db.TreatFlavor.Remove(joinEntry);
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
@@ -92,7 +92,7 @@ namespace Menu.Controllers
      public ActionResult AddTreat(int id)
     {
       var thisFlavor = _db.Categories.FirstOrDefault(flavor => flavor.FlavorId == id);
-      ViewBag.TreatId = new SelectList(_db.Treats, "TreatId", "Title");
+      ViewBag.TreatId = new SelectList(_db.Treats, "TreatId", "Name");
       return View(thisFlavor);
     }
 
@@ -101,7 +101,7 @@ namespace Menu.Controllers
     {
       if (TreatId != 0)
       {
-      _db.FlavorTreat.Add(new FlavorTreat() { TreatId = TreatId, FlavorId = flavor.FlavorId });
+      _db.TreatFlavor.Add(new TreatFlavor() { TreatId = TreatId, FlavorId = flavor.FlavorId });
       }
       _db.SaveChanges();
       return RedirectToAction("Index");

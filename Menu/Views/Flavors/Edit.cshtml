@@ -22,14 +22,14 @@
   @foreach(var join in Model.JoinEntities)
   {
     <dl>
-      @join.Treat.Title
+      @join.Treat.Name
         @using (Html.BeginForm("DeleteTreat", "Categories"))
         {
-        @Html.Hidden("joinId", @join.FlavorTreatId)
+        @Html.Hidden("joinId", @join.TreatFlavorId)
         <input type="submit" value="Delete" class="btn"/>
         }
     </dl>
     }
 <hr />
 <br>
-<h5>@Html.ActionLink("Back to categories", "Index")</h5>
+<h5>@Html.ActionLink("Back to flavors", "Index")</h5>

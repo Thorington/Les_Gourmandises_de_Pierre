@@ -47,7 +47,7 @@ namespace Menu.Controllers
       _db.SaveChanges();
       if (FlavorId != 0)
       {
-          _db.FlavorTreat.Add(new FlavorTreat() { FlavorId = FlavorId, TreatId = recipe.TreatId });
+          _db.TreatFlavor.Add(new TreatFlavor() { FlavorId = FlavorId, TreatId = recipe.TreatId });
       }
       _db.SaveChanges();
       return RedirectToAction("Index");
@@ -74,7 +74,7 @@ namespace Menu.Controllers
     {
       if (FlavorId != 0)
       {
-        _db.FlavorTreat.Add(new FlavorTreat() { FlavorId = FlavorId, TreatId = recipe.TreatId });
+        _db.TreatFlavor.Add(new TreatFlavor() { FlavorId = FlavorId, TreatId = recipe.TreatId });
       }
       _db.Entry(recipe).State = EntityState.Modified;
       _db.SaveChanges();
@@ -93,7 +93,7 @@ namespace Menu.Controllers
     {
       if (FlavorId != 0)
       {
-      _db.FlavorTreat.Add(new FlavorTreat() { FlavorId = FlavorId, TreatId = recipe.TreatId });
+      _db.TreatFlavor.Add(new TreatFlavor() { FlavorId = FlavorId, TreatId = recipe.TreatId });
       }
       _db.SaveChanges();
       return RedirectToAction("Index");
@@ -117,8 +117,8 @@ namespace Menu.Controllers
     [HttpPost]
     public ActionResult DeleteFlavor(int joinId)
     {
-      var joinEntry = _db.FlavorTreat.FirstOrDefault(entry => entry.FlavorTreatId == joinId);
-      _db.FlavorTreat.Remove(joinEntry);
+      var joinEntry = _db.TreatFlavor.FirstOrDefault(entry => entry.TreatFlavorId == joinId);
+      _db.TreatFlavor.Remove(joinEntry);
       _db.SaveChanges();
       return RedirectToAction("Index");
     }

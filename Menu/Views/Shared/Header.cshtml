@@ -4,7 +4,7 @@
 @if (User.Identity.IsAuthenticated)
 {
   <h4> @Html.ActionLink("home", "Index", "Home") | @Html.ActionLink("treats", "Index", "Treats") | 
-  @Html.ActionLink("categories", "Index", "Categories")</h4>
+  @Html.ActionLink("flavors", "Index", "Categories")</h4>
 
   <span class="logoutbtn">@using (Html.BeginForm("LogOff", "Account"))
   {

@@ -6,16 +6,13 @@ namespace Menu.Models
   {
     public Treat()
     {
-      this.JoinEntities = new HashSet<FlavorTreat>();
+      this.JoinEntities = new HashSet<TreatFlavor>();
     }
 
     public int TreatId { get; set; }
-    public string Title { get; set; }
-    public string Instructions { get; set; }
-    public string Ingredients { get; set; }
-    public string Rating { get; set; }
-    public virtual ApplicationUser User { get; set; } //new line
+    public string Name { get; set; }
+    public virtual ApplicationUser User { get; set; }
 
-    public virtual ICollection<FlavorTreat> JoinEntities { get;}
+    public virtual ICollection<TreatFlavor> JoinEntities { get;}
   }
 }
