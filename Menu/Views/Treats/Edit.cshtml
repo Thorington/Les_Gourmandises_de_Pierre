@@ -18,6 +18,12 @@
   <p>Flavor:
   @Html.DropDownList("FlavorId")</p>
 
+  <p>Country of origin:
+  @Html.TextBoxFor(model => model.Country, new { @class = "form-control", style="width: 300px;"})</p>
+
+  <p>Description:
+  @Html.TextAreaFor(model => model.Description, new { @class = "form-control", style="width: 600px; height: 200px;"})</p>
+
 
   <input type="submit" value="Save" class="btn" />
 }

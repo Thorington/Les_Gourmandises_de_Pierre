@@ -10,12 +10,12 @@
 <br>
 @if (Model.Any())
 {
-  <ul>
+  <dl>
     @foreach (Treat treat in Model)
     {
-      <li>@Html.ActionLink($"{treat.Name}", "Details", new { id = treat.TreatId })</li>
+      <dt>@Html.ActionLink($"{treat.Name}", "Details", new { id = treat.TreatId }) <em>@treat.Country</em></dt>
     }
-  </ul>
+  </dl>
 } 
 else
 {

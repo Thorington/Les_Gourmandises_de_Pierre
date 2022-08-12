@@ -3,8 +3,8 @@ div#footer {
   bottom:0px;
   left:0px;
   width:100%;
-  color: rgb(101, 180, 200);
-  background-color:rgb(249, 254, 255);
+  color: rgb(58, 58, 58);
+  background-color:white;
   padding:8px;
 }
 
@@ -14,60 +14,61 @@ div#header {
   left:0px;
   text-align: center;
   width:100%;
-  color: rgb(101, 180, 200);
+  color: rgb(0, 0, 0);
 	font-family: 'Josefin Sans', sans-serif;
   font-weight: 400;
-  /* background: url("../img/3.jpg") no-repeat center center fixed;  */
+  /* background: url("../img/background.jpg") no-repeat center center fixed;  */
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-	background:rgb(249, 254, 255);
+	background:white;
   padding: 20px;
   /* border-image: url("../img/3.jpg")7% round;
 	border-image-width: 30px; */
-	border-color: rgb(235, 243, 235);
+	/* border-color: rgb(0, 0, 0);
 	border-style: solid;
-	border-width: 30px;
+	border-width: 10px; */
 }
 
 h1 {
-	color: rgb(101, 180, 200);
+	color: rgb(6, 90, 175);
   font-size: 75px;
   font-weight: 700;
   font-family: Snell Roundhand, cursive;
 }
 
 h2 {
-  color: rgb(101, 180, 200);
+  color:rgb(0, 0, 0);
 	padding-bottom: 10px;
   font-size: 40px;
   font-weight: 700;
 	text-align: center;
+  font-family: Snell Roundhand, cursive;
 }
 
 h3 {
-  color:rgb(101, 180, 200);
+  color:rgb(0, 0, 0);
   font-weight: 700;
 }
 
 h4 {
-  color:rgb(101, 180, 200);
+  color:rgb(0, 0, 0);
   font-weight: 700;
 }
 
 h5 {
-  color:rgb(101, 180, 200);
+  color:rgb(0, 0, 0);
   white-space: pre-wrap;
 }
 
 a:link {
-  color:rgb(101, 180, 200);
+  color:rgb(6, 90, 175);
   text-decoration: none;
 }
 
 a:visited {
-  color: rgb(101, 180, 200);
+  color: rgb(6, 90, 175);
   text-decoration: none;
 }
 
@@ -84,8 +85,8 @@ a:hover {
 body {
 	font-family: 'Josefin Sans', sans-serif;
   font-weight: 400;
-  color: black;
-  background: url("../img/4.jpg") no-repeat center center fixed; 
+  color: rgb(0, 0, 0);
+  background: url("../img/background.jpg") no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -93,35 +94,39 @@ body {
 }
 
 main {
-  margin-top: 300px;
+  margin-top:300px;
   margin-left: 10%;
   margin-right: 10%;
   text-align: left;
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 400;
-  background:rgb(249, 254, 255);
+  background:white;
   padding: 70px;
+  border-radius: 50px;
   /* border-image: url("../img/3.jpg")7% round;
 	border-image-width: 30px; */
-	border-color: rgb(235, 243, 235);
+	border-color: rgb(0, 0, 0);
 	border-style: solid;
-	border-width: 30px;
+	border-width: 10px;
 }
 
 .btn {
-  background:rgb(101, 180, 200);
+  background:rgb(0, 0, 0);
   border-radius: 50px;
   color: white;
 }
 
 dl {
-  font-size: medium;
+  font-size: large;
   font-weight: 400;
-  color: rgb(101, 180, 200);
   font-family: 'Josefin Sans', sans-serif;
 }
 
 .logoutbtn {
   text-align: right;
+}
+
+em {
+  font-weight: 200;
 }
 

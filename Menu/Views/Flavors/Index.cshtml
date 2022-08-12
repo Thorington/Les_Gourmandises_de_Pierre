@@ -12,12 +12,12 @@
   <h3>No flavors have been added yet!</h3>
 } 
 
-<ul>
+<dl>
   @foreach(Flavor flavor in Model)
   {
-    <li>@Html.ActionLink($"{flavor.Name}", "Details", new { id = flavor.FlavorId })</li>
+    <dt>@Html.ActionLink($"{flavor.Name}", "Details", new { id = flavor.FlavorId })</dt>
   }
-</ul>
+</dl>
 <hr />
 
 <br>
