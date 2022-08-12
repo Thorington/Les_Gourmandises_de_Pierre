@@ -9,7 +9,7 @@
 @if (User.Identity.IsAuthenticated)
 {
   <h5>@Html.ActionLink("Add a treat", "Create", "Treats")</h5>
-  <h5>@Html.ActionLink("Add a flavor", "Create", "Categories")</h5>
+  <h5>@Html.ActionLink("Add a flavor", "Create", "Flavors")</h5>
   <br>
   <hr />
   <p>Logged in as @User.Identity.Name</p>

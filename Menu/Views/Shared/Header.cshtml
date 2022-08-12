@@ -1,10 +1,10 @@
 <div id="header">
-  <h1><a href='/'>Treat Box</a></h1>
+  <h1><a href='/'>Pierre's Bakery</a></h1>
 
 @if (User.Identity.IsAuthenticated)
 {
   <h4> @Html.ActionLink("home", "Index", "Home") | @Html.ActionLink("treats", "Index", "Treats") | 
-  @Html.ActionLink("flavors", "Index", "Categories")</h4>
+  @Html.ActionLink("flavors", "Index", "Flavors")</h4>
 
   <span class="logoutbtn">@using (Html.BeginForm("LogOff", "Account"))
   {

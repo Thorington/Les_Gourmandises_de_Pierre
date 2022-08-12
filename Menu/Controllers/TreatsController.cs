@@ -33,7 +33,7 @@ namespace Menu.Controllers
 
     public ActionResult Create()
     {
-      ViewBag.FlavorId = new SelectList(_db.Categories, "FlavorId", "Name");
+      ViewBag.FlavorId = new SelectList(_db.Flavors, "FlavorId", "Name");
       return View();
     }
 
@@ -65,7 +65,7 @@ namespace Menu.Controllers
     public ActionResult Edit(int id)
     {
       var thisTreat = _db.Treats.FirstOrDefault(recipe => recipe.TreatId == id);
-      ViewBag.FlavorId = new SelectList(_db.Categories, "FlavorId", "Name");
+      ViewBag.FlavorId = new SelectList(_db.Flavors, "FlavorId", "Name");
       return View(thisTreat);
     }
 
@@ -84,7 +84,7 @@ namespace Menu.Controllers
     public ActionResult AddFlavor(int id)
     {
       var thisTreat = _db.Treats.FirstOrDefault(recipe => recipe.TreatId == id);
-      ViewBag.FlavorId = new SelectList(_db.Categories, "FlavorId", "Name");
+      ViewBag.FlavorId = new SelectList(_db.Flavors, "FlavorId", "Name");
       return View(thisTreat);
     }
 

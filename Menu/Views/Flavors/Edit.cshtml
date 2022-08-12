@@ -23,7 +23,7 @@
   {
     <dl>
       @join.Treat.Name
-        @using (Html.BeginForm("DeleteTreat", "Categories"))
+        @using (Html.BeginForm("DeleteTreat", "Flavors"))
         {
         @Html.Hidden("joinId", @join.TreatFlavorId)
         <input type="submit" value="Delete" class="btn"/>
