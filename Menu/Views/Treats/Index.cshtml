@@ -2,25 +2,25 @@
   Layout = "_Layout";
 }
 
-@using RecipeBox.Models;
-@model IEnumerable<RecipeBox.Models.Recipe>
+@using Menu.Models;
+@model IEnumerable<Menu.Models.Treat>
 
-<h2>Recipes for @User.Identity.Name</h2>
-
+<h2>Treats</h2>
+<hr />
+<br>
 @if (Model.Any())
 {
   <ul>
-    @foreach (Recipe recipe in Model)
+    @foreach (Treat treat in Model)
     {
-      <li>@Html.ActionLink($"{recipe.Description}", "Details", new { id = recipe.RecipeId })</li>
+      <li>@Html.ActionLink($"{treat.Title}", "Details", new { id = treat.TreatId }) | Rating: @treat.Rating</li>
     }
   </ul>
 } 
 else
 {
-  <h3>No recipes have been added yet!</h3>
+  <h3>No treats have been added yet!</h3>
 }
-
-<p>@Html.ActionLink("Add new recipe", "Create")</p>
-
-<p>@Html.ActionLink("Home", "Index", "Home")</p>
+<hr />
+<br>
+<h5>@Html.ActionLink("Add treat", "Create")</h5>

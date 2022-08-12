@@ -1,18 +1,21 @@
 using System.Collections.Generic;
 
-namespace RecipeBox.Models
+namespace Menu.Models
 {
-  public class Recipe
+  public class Treat
   {
-    public Recipe()
+    public Treat()
     {
-        this.JoinEntities = new HashSet<CategoryRecipe>();
+      this.JoinEntities = new HashSet<FlavorTreat>();
     }
 
-    public int RecipeId { get; set; }
-    public string Description { get; set; }
+    public int TreatId { get; set; }
+    public string Title { get; set; }
+    public string Instructions { get; set; }
+    public string Ingredients { get; set; }
+    public string Rating { get; set; }
     public virtual ApplicationUser User { get; set; } //new line
 
-    public virtual ICollection<CategoryRecipe> JoinEntities { get;}
+    public virtual ICollection<FlavorTreat> JoinEntities { get;}
   }
 }

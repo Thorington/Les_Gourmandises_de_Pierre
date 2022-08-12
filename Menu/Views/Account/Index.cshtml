@@ -1,0 +1,18 @@
+@{
+  Layout = "_Layout";
+}
+
+@using System.Security.Claims
+
+<h4>Welcome!</h4>
+
+@if (User.Identity.IsAuthenticated)
+{
+  <h5>You are logged in as @User.Identity.Name</h5>
+}
+else
+{
+  <h5>@Html.ActionLink("Log in", "Login")</h5>
+  <h5>@Html.ActionLink("Create account", "Register")</h5>
+ 
+}

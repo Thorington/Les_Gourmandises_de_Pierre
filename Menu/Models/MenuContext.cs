@@ -1,15 +1,15 @@
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 
-namespace RecipeBox.Models
+namespace Menu.Models
 {
-  public class RecipeBoxContext : IdentityDbContext<ApplicationUser>
+  public class MenuContext : IdentityDbContext<ApplicationUser>
   {
-    public DbSet<Category> Categories { get; set; }
-    public DbSet<Recipe> Recipes { get; set; }
-    public DbSet<CategoryRecipe> CategoryRecipe { get; set; }
+    public DbSet<Flavor> Categories { get; set; }
+    public DbSet<Treat> Treats { get; set; }
+    public DbSet<FlavorTreat> FlavorTreat { get; set; }
 
-    public RecipeBoxContext(DbContextOptions options) : base(options) { }
+    public MenuContext(DbContextOptions options) : base(options) { }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {

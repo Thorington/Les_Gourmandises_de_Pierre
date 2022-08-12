@@ -2,18 +2,32 @@
   Layout = "_Layout";
 }
 
-@model RecipeBox.Models.Recipe
+@model Menu.Models.Treat
 
-<h4>Add a new task</h4>
+<h4>Add a treat</h4>
+<hr />
+<br>
 
 @using (Html.BeginForm())
 {
-    @Html.LabelFor(model => model.Description)
-    @Html.TextBoxFor(model => model.Description)
+  <p>Title:
+  @Html.TextBoxFor(model => model.Title, new { @class = "form-control", placeholder="Required", required="required", style="width: 600px;"})</p>
 
-    @Html.Label("Select category")
-    @Html.DropDownList("CategoryId")
+  <p>Flavor:
+  @Html.DropDownList("FlavorId")</p>
 
-    <input type="submit" value="Add new recipe" class="btn btn-default" />
+  <p>Ingredients:
+  @Html.TextAreaFor(model => model.Ingredients, new { @class = "form-control", style="width: 600px; height: 200px;"})</p>
+
+  <p>Instructions:
+  @Html.TextAreaFor(model => model.Instructions, new { @class = "form-control", style="width: 600px; height: 200px"})</p>
+
+  <p>Rating:
+  @Html.TextBoxFor(model => model.Rating)</p> 
+
+  <br>
+  <p><input type="submit" value="Save" class="btn btn-default" /></p>
 }
-<p>@Html.ActionLink("Show all recipes", "Index")</p>
+<hr />
+<br>
+<h5>@Html.ActionLink("Back to treats", "Index")</h5>

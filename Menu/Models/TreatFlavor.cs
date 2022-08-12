@@ -1,11 +1,11 @@
-namespace RecipeBox.Models
+namespace Menu.Models
 {
-  public class CategoryRecipe
+  public class FlavorTreat
   {       
-    public int CategoryRecipeId { get; set; }
-    public int RecipeId { get; set; }
-    public int CategoryId { get; set; }
-    public virtual Recipe Recipe { get; set; }
-    public virtual Category Category { get; set; }
+    public int FlavorTreatId { get; set; }
+    public int TreatId { get; set; }
+    public int FlavorId { get; set; }
+    public virtual Treat Treat { get; set; }
+    public virtual Flavor Flavor { get; set; }
   }
 }

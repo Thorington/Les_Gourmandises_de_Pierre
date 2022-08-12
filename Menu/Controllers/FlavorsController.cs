@@ -1,23 +1,29 @@
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc;
-using RecipeBox.Models;
+using Menu.Models;
 using System.Collections.Generic;
 using System.Linq;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
+using System.Threading.Tasks;
+using System.Security.Claims;
 
-namespace RecipeBox.Controllers
+namespace Menu.Controllers
 {
+  [Authorize]
   public class CategoriesController : Controller
   {
-    private readonly RecipeBoxContext _db;
+    private readonly MenuContext _db;
 
-    public CategoriesController(RecipeBoxContext db)
+    public CategoriesController(MenuContext db)
     {
       _db = db;
     }
 
     public ActionResult Index()
     {
-      List<Category> model = _db.Categories.ToList();
+      List<Flavor> model = _db.Categories.ToList();
       return View(model);
     }
 
@@ -27,46 +33,76 @@ namespace RecipeBox.Controllers
     }
 
     [HttpPost]
-    public ActionResult Create(Category category)
+    public ActionResult Create(Flavor flavor)
     {
-      _db.Categories.Add(category);
+      _db.Categories.Add(flavor);
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
 
     public ActionResult Details(int id)
     {
-      var thisCategory = _db.Categories
-          .Include(category => category.JoinEntities)
-          .ThenInclude(join => join.Recipe)
-          .FirstOrDefault(category => category.CategoryId == id);
-      return View(thisCategory);
+      var thisFlavor = _db.Categories
+          .Include(flavor => flavor.JoinEntities)
+          .ThenInclude(join => join.Treat)
+          .FirstOrDefault(flavor => flavor.FlavorId == id);
+      return View(thisFlavor);
     }
     public ActionResult Edit(int id)
     {
-      var thisCategory = _db.Categories.FirstOrDefault(category => category.CategoryId == id);
-      return View(thisCategory);
+      var thisFlavor = _db.Categories.FirstOrDefault(flavor => flavor.FlavorId == id);
+      return View(thisFlavor);
     }
 
     [HttpPost]
-    public ActionResult Edit(Category category)
+    public ActionResult Edit(Flavor flavor)
     {
-      _db.Entry(category).State = EntityState.Modified;
+      _db.Entry(flavor).State = EntityState.Modified;
       _db.SaveChanges();
       return RedirectToAction("Index");
     }
 
     public ActionResult Delete(int id)
     {
-      var thisCategory = _db.Categories.FirstOrDefault(category => category.CategoryId == id);
-      return View(thisCategory);
+      var thisFlavor = _db.Categories.FirstOrDefault(flavor => flavor.FlavorId == id);
+      return View(thisFlavor);
     }
 
     [HttpPost, ActionName("Delete")]
     public ActionResult DeleteConfirmed(int id)
     {
-      var thisCategory = _db.Categories.FirstOrDefault(category => category.CategoryId == id);
-      _db.Categories.Remove(thisCategory);
+      var thisFlavor = _db.Categories.FirstOrDefault(flavor => flavor.FlavorId == id);
+      _db.Categories.Remove(thisFlavor);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
+
+    [HttpPost]
+    public ActionResult DeleteTreat(int joinId)
+    {
+      var joinEntry =
+          _db
+              .FlavorTreat
+              .FirstOrDefault(entry => entry.FlavorTreatId == joinId);
+      _db.FlavorTreat.Remove(joinEntry);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
+
+     public ActionResult AddTreat(int id)
+    {
+      var thisFlavor = _db.Categories.FirstOrDefault(flavor => flavor.FlavorId == id);
+      ViewBag.TreatId = new SelectList(_db.Treats, "TreatId", "Title");
+      return View(thisFlavor);
+    }
+
+    [HttpPost]
+    public ActionResult AddTreat(Flavor flavor, int TreatId)
+    {
+      if (TreatId != 0)
+      {
+      _db.FlavorTreat.Add(new FlavorTreat() { TreatId = TreatId, FlavorId = flavor.FlavorId });
+      }
       _db.SaveChanges();
       return RedirectToAction("Index");
     }

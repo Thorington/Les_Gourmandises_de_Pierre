@@ -2,19 +2,34 @@
   Layout = "_Layout";
 }
 
-@model RecipeBox.Models.Category
+@model Menu.Models.Flavor
 
-<h2>Edit</h2>
-
-<h4>Edit this category: @Html.DisplayFor(model => model.Name)</h4>
-
+<h2>Edit flavor: @Html.DisplayFor(model => model.Name)</h2>
+<hr />
 @using (Html.BeginForm())
 {
-  @Html.HiddenFor(model => model.CategoryId)
+  @Html.HiddenFor(model => model.FlavorId)
+<br>
+  <h5>Flavor name:</h5>
+  <h5>@Html.EditorFor(model => model.Name) <input type="submit" value="Save" class="btn"/></h5>
 
-  @Html.LabelFor(model => model.Name)
-  @Html.EditorFor(model => model.Name)
-
-  <input type="submit" value="Save" />
+  
 }
-<p>@Html.ActionLink("Back to list", "Index")</p>
+<br>
+<hr />
+<h4>Manage treats</h4>
+<br>
+  @foreach(var join in Model.JoinEntities)
+  {
+    <dl>
+      @join.Treat.Title
+        @using (Html.BeginForm("DeleteTreat", "Categories"))
+        {
+        @Html.Hidden("joinId", @join.FlavorTreatId)
+        <input type="submit" value="Delete" class="btn"/>
+        }
+    </dl>
+    }
+<hr />
+<br>
+<h5>@Html.ActionLink("Back to categories", "Index")</h5>

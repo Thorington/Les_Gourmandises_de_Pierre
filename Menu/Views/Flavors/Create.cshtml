@@ -2,13 +2,20 @@
   Layout = "_Layout";
 }
 
-@model RecipeBox.Models.Category
+@model Menu.Models.Flavor
 
-<h4>Add a new task</h4>
+<h4>Add a flavor</h4>
+<hr />
+<br>
+
 @using (Html.BeginForm())
 {
-  @Html.LabelFor(model => model.Name)
-  @Html.TextBoxFor(model => model.Name)
-  <input type="submit" value="Add new category" />
+  <p>Flavor name:
+  @Html.TextBoxFor(model => model.Name, new { @class = "form-control", placeholder="Required", required="required", style="width: 300px;"})</p>
+
+  <br>
+  <p><input type="submit" value="Save" class="btn btn-default" /></p>
 }
-<p>@Html.ActionLink("Show all categories", "Index")</p>
+<hr />
+<br>
+<h5>@Html.ActionLink("Back to categories", "Index")</h5>

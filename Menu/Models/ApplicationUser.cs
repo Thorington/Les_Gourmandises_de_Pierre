@@ -1,9 +1,11 @@
 using Microsoft.AspNetCore.Identity;
 
-namespace RecipeBox.Models
+namespace Menu.Models
 {
     public class ApplicationUser : IdentityUser
     {
+
+       
 
     }
 }

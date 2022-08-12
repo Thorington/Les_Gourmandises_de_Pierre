@@ -3,7 +3,7 @@ div#footer {
   bottom:0px;
   left:0px;
   width:100%;
-  color: rgb(255, 65, 2);
+  color: rgb(94, 114, 94);
   background-color:rgb(255, 255, 255);
   padding:8px;
 }
@@ -50,6 +50,16 @@ h3 {
   font-weight: 700;
 }
 
+h4 {
+  color:rgb(255, 65, 2);
+  font-weight: 700;
+}
+
+h5 {
+  color:rgb(255, 65, 2);
+  white-space: pre-wrap;
+}
+
 a:link {
   color:rgb(255, 65, 2);
   text-decoration: none;
@@ -61,14 +71,14 @@ a:visited {
 }
 
 a:hover {
-  color:black;
+  color:rgb(94, 114, 94);
   text-decoration: none;
 }
 
-a:active {
+/* a:active {
   color: rgb(255, 65, 2);
   text-decoration: none;
-}
+} */
 
 body {
 	font-family: 'Josefin Sans', sans-serif;
@@ -99,15 +109,18 @@ main {
 
 .btn {
   background:rgb(255, 65, 2);
-  border-radius: 5px;
+  border-radius: 50px;
   color: white;
 }
 
 dl {
   font-size: medium;
+  font-weight: 400;
+  color: rgb(255, 65, 2);
   font-family: 'Josefin Sans', sans-serif;
 }
 
-
-
+.logoutbtn {
+  text-align: right;
+}
 
