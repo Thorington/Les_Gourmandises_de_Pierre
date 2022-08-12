@@ -13,16 +13,16 @@
   @Html.HiddenFor(model => model.TreatId)
 
   <p>Name:
-  @Html.TextBoxFor(model => model.Name, new { @class = "form-control", placeholder="Required", required="required", style="width: 600px;"})</p>
+  @Html.TextBoxFor(model => model.Name, new { @class = "form-control", placeholder="Required", required="required", style="width: 75%;"})</p>
 
   <p>Flavor:
   @Html.DropDownList("FlavorId")</p>
 
   <p>Country of origin:
-  @Html.TextBoxFor(model => model.Country, new { @class = "form-control", style="width: 300px;"})</p>
+  @Html.TextBoxFor(model => model.Country, new { @class = "form-control", style="width: 75%;"})</p>
 
   <p>Description:
-  @Html.TextAreaFor(model => model.Description, new { @class = "form-control", style="width: 600px; height: 200px;"})</p>
+  @Html.TextAreaFor(model => model.Description, new { @class = "form-control", style="width: 75%; height: 200px;"})</p>
 
 
   <input type="submit" value="Save" class="btn" />

@@ -17,8 +17,8 @@
   <p>This treat does not belong to any flavors</p>
 }
 else
-{ <h5>Country: @Html.DisplayFor(model => model.Country)</h5>
-  <h5>Description: @Html.DisplayFor(model => model.Description)</h5>
+{ <p><h3>Country:</h3> @Html.DisplayFor(model => model.Country)</p>
+  <p><h3>Description:</h3> @Html.DisplayFor(model => model.Description)</p>
   <hr />
   <br>
   <h3>Flavors:</h3>
@@ -27,11 +27,14 @@ else
   @foreach(var join in Model.JoinEntities)
   {
     <dt>@join.Flavor.Name 
-    @using (Html.BeginForm("DeleteFlavor", "Treats"))
-    {
-      @Html.Hidden("joinId", @join.TreatFlavorId) 
-      <input type="submit" value="Delete" class="btn"/>
-    }
+      @if (User.Identity.IsAuthenticated)
+        {
+          @using (Html.BeginForm("DeleteFlavor", "Treats"))
+            {
+              @Html.Hidden("joinId", @join.TreatFlavorId) 
+              <input type="submit" value="Delete" class="btn"/>
+            }
+        }
     <br>
     </dt>
   }
@@ -39,8 +42,10 @@ else
   <br>
 }
 <hr />
-<br>
+@if (User.Identity.IsAuthenticated)
+{
 <h5>@Html.ActionLink("Add flavor", "AddFlavor", new { id = Model.TreatId })</h5>
 <h5>@Html.ActionLink("Edit treat", "Edit", new { id = Model.TreatId })</h5>
 <h5>@Html.ActionLink("Delete treat", "Delete", new { id = Model.TreatId })</h5>
+}
 <h5>@Html.ActionLink("Back to treats", "Index")</h5>

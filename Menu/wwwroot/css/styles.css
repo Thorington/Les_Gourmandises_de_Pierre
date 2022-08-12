@@ -1,69 +1,60 @@
 div#footer {
-  position:fixed;
-  bottom:0px;
-  left:0px;
-  width:100%;
+  position: fixed;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
   color: rgb(58, 58, 58);
-  background-color:white;
-  padding:8px;
+  background-color: white;
+  padding: 8px;
 }
 
 div#header {
-  position:fixed;
-  top:0px;
-  left:0px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
   text-align: center;
-  width:100%;
+  width: 100%;
   color: rgb(0, 0, 0);
-	font-family: 'Josefin Sans', sans-serif;
+  font-family: 'Josefin Sans', sans-serif;
   font-weight: 400;
-  /* background: url("../img/background.jpg") no-repeat center center fixed;  */
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-	background:white;
+  background: white;
   padding: 20px;
-  /* border-image: url("../img/3.jpg")7% round;
-	border-image-width: 30px; */
-	/* border-color: rgb(0, 0, 0);
-	border-style: solid;
-	border-width: 10px; */
 }
 
 h1 {
-	color: rgb(6, 90, 175);
+  color: rgb(6, 90, 175);
   font-size: 75px;
   font-weight: 700;
   font-family: Snell Roundhand, cursive;
 }
 
 h2 {
-  color:rgb(0, 0, 0);
-	padding-bottom: 10px;
+  color: rgb(0, 0, 0);
+  padding-bottom: 10px;
   font-size: 40px;
   font-weight: 700;
-	text-align: center;
-  font-family: Snell Roundhand, cursive;
+  text-align: center;
 }
 
 h3 {
-  color:rgb(0, 0, 0);
-  font-weight: 700;
+  color: rgb(0, 0, 0);
 }
 
 h4 {
-  color:rgb(0, 0, 0);
-  font-weight: 700;
+  color: rgb(0, 0, 0);
 }
 
 h5 {
-  color:rgb(0, 0, 0);
+  color: rgb(0, 0, 0);
   white-space: pre-wrap;
 }
 
 a:link {
-  color:rgb(6, 90, 175);
+  color: rgb(6, 90, 175);
   text-decoration: none;
 }
 
@@ -73,20 +64,14 @@ a:visited {
 }
 
 a:hover {
-  color:pink;
+  color: pink;
   text-decoration: none;
 }
 
-/* a:active {
-  color: rgb(255, 65, 2);
-  text-decoration: none;
-} */
-
 body {
-	font-family: 'Josefin Sans', sans-serif;
-  font-weight: 400;
+  font-family: 'Josefin Sans', sans-serif;
   color: rgb(0, 0, 0);
-  background: url("../img/background.jpg") no-repeat center center fixed; 
+  background: url("../img/background.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -94,32 +79,23 @@ body {
 }
 
 main {
-  margin-top:300px;
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-top: 250px;
+  margin-left: 30%;
+  margin-right: 30%;
   text-align: left;
   font-family: 'Josefin Sans', sans-serif;
-  font-weight: 400;
-  background:white;
+  background: white;
   padding: 70px;
   border-radius: 50px;
-  /* border-image: url("../img/3.jpg")7% round;
-	border-image-width: 30px; */
-	border-color: rgb(0, 0, 0);
-	border-style: solid;
-	border-width: 10px;
+  border-color: rgb(0, 0, 0);
+  border-style: solid;
+  border-width: 10px;
 }
 
 .btn {
-  background:rgb(0, 0, 0);
+  background: rgb(6, 90, 175);
   border-radius: 50px;
   color: white;
-}
-
-dl {
-  font-size: large;
-  font-weight: 400;
-  font-family: 'Josefin Sans', sans-serif;
 }
 
 .logoutbtn {
@@ -129,4 +105,3 @@ dl {
 em {
   font-weight: 200;
 }
-

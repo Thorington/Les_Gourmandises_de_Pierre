@@ -21,4 +21,7 @@
 <hr />
 
 <br>
+@if (User.Identity.IsAuthenticated)
+{
 <h5>@Html.ActionLink("Add flavor", "Create")</h5>
+}

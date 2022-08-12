@@ -4,16 +4,13 @@
 
 @model Menu.Models.Treat
 
-<h3>Add a flavor to @Html.DisplayFor(model => model.Name)</h3>
+<h3>@Html.DisplayFor(model => model.Name)</h3>
 <hr />
-
 @using (Html.BeginForm())
 {
   @Html.HiddenFor(model => model.TreatId)
-
   <h5>Add flavor:
   @Html.DropDownList("FlavorId")</h5>
-
   <input type="submit" value="Save" class="btn" />
 }
 <hr />

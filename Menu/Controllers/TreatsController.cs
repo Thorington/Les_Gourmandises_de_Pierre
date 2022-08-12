@@ -23,13 +23,21 @@ namespace Menu.Controllers
       _db = db;
     }
 
-    public async Task<ActionResult> Index()
+    [AllowAnonymous]
+    public ActionResult Index()
     {
-      var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
-      var currentUser = await _userManager.FindByIdAsync(userId);
-      var userTreats = _db.Treats.Where(entry => entry.User.Id == currentUser.Id).ToList();
-      return View(userTreats);
+    return View(_db.Treats.ToList());
     }
+
+//The code below would be if we were only showing each user their own entries. Instead, using the above route, anyone logged in can add to a single common database and anyone logged out can read it.
+
+    // public async Task<ActionResult> Index()
+    // {
+    //   var userId = this.User.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+    //   var currentUser = await _userManager.FindByIdAsync(userId);
+    //   var userTreats = _db.Treats.Where(entry => entry.User.Id == currentUser.Id).ToList();
+    //   return View(userTreats);
+    // }
 
     public ActionResult Create()
     {
@@ -53,6 +61,7 @@ namespace Menu.Controllers
       return RedirectToAction("Index");
     }
 
+    [AllowAnonymous]
     public ActionResult Details(int id)
     {
       var thisTreat = _db.Treats
