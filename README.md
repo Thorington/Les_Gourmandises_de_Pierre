@@ -1,5 +1,5 @@
 # Pierre's Treats
-<!-- ![a picture of the page's header](Menu/wwwroot/img/header.jpg) -->
+![a picture of the page's header](Menu/wwwroot/img/header.jpg)
 
 #### Contributors: _**Claire Thorington**_
 
