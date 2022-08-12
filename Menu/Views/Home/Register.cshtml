@@ -1,0 +1,23 @@
+@{
+  Layout = "_Layout2";
+}
+
+@using RecipeBox.ViewModels
+
+@model RegisterViewModel
+
+<h2>Create an account</h2>
+<hr />
+@using (Html.BeginForm("Register", "Account", FormMethod.Post))
+{
+  <p>Email:
+  @Html.TextBoxFor(user=> user.Email, new { @class = "form-control", placeholder="Required", required="required", style="width: 300px;"})</p>
+
+  <p>Password:
+  @Html.PasswordFor(user=> user.Password, new { @class = "form-control", placeholder="Required", required="required", style="width: 200px;"})</p>
+
+  <p>Confirm password: 
+  @Html.PasswordFor(user=> user.ConfirmPassword, new { @class = "form-control", placeholder="Required", required="required", style="width: 200px;"})</p>
+
+  <input type="submit" value="Register" class="btn" />
+}
