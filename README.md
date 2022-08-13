@@ -20,6 +20,7 @@
 
 Pierre, that indefatigable entrepreneur, that pastry tycoon, that yeasty hustler, needs an online menu that customers have to log in to see and they aren't going to be happy about that. 
 It's a menu for the customer who wants to know exactly what they're getting, and they have a real impact on the goods Pierre carries. CRUD-level impact. Unless I'm misinterpreting the prompt.
+*Update! Re-read the prompt! All users can view content, only logged-in users can edit!! That's the whole point!
 
 ![a picture of the program's schema](Menu/wwwroot/img/schema.jpg)
 
